@@ -1,0 +1,45 @@
+
+
+
+
+
+
+
+# Pull information from an excel sheet
+
+
+# Create user interface
+## Create interface window
+
+## Create filepath selection field
+
+## Create browse button
+
+## Create sort dropdown
+
+## Creat "Run" button
+
+
+
+
+
+
+
+
+
+# Label information by filter
+
+
+
+
+# Create a template for each label
+
+
+
+
+# Add templates to a pdf queue
+
+
+
+
+# Create a pdf from that information
