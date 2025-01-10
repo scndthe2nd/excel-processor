@@ -1,24 +1,41 @@
 
 #### Process ####
 # Pull information from an excel sheet
-## Get correct cell collumn
+## Get correct cell collumn x
 
-# SAMPLE #
-import openpyxl
+#import openpyxl
+#workbook = openpyxl.load_workbook(r'Demo/Demo Sheet.xlsx', data_only=True, read_only=True)
+#print(workbook.sheetnames)
+#sheet = workbook['MASTER WORKSHEET']
+#Sample_Value_1 = sheet['B'].value
+#Sample_Value_2 = sheet['B4'].value
+#Sample_Value_3 = sheet['C3'].value
+#Sample_Value_4 = sheet['B5'].value
+#print(Sample_Value_1,Sample_Value_2,Sample_Value_3,Sample_Value_4)
 
-wb = openpyxl.load_workbook(r'c:*specific destination of file*.xlsx')
-sheet = wb.active
-x1 = sheet['B3'].value
-x2 = sheet['B4'].value
-y1 = sheet['C3'].value
-y2 = sheet['C4'].value
-
-
-
-print(x1,x2,y1,y2)
 
 
 # Label information by filter
+## Create a list of POSSIBLE_VALUES that SAMPLE_VALUE can have
+## Create a list of OUTPUT_VALUES
+## Create an association of POSSIBLE_VALUES with OUTPUT VALUES
+## Relate OUTPUT_VALUE to SAMPLE_VALUE
+
+## IF SAMPLE_VALUE = A; THEN OUTPUT_VALUE = 1,2,3
+## IF SAMPLE_VALUE = B; THEN OUTPUT_VALUE = 2,4,6
+
+
+
+# SAMPLE # 
+# Create an array
+#import array as arr
+#b1= "stuff"
+#Possible_Value = arr.array('i', [1,2,3,4,5,6,7,8,9,0])
+#Sample_Value = ("v1","v2","v3","v4","v5")
+#Association = arr.array( "a" ,["v1","v2","v3"])
+
+#print(Possible_Value[4:8])
+
 
 # Create a template for each label
 ## Define template
