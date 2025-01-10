@@ -14,7 +14,6 @@
 #print(Sample_Value_1,Sample_Value_2,Sample_Value_3,Sample_Value_4)
 
 
-
 # Label information by filter
 ## Create a list of POSSIBLE_VALUES that SAMPLE_VALUE can have
 ## Create a list of OUTPUT_VALUES
@@ -24,17 +23,19 @@
 ## IF SAMPLE_VALUE = A; THEN OUTPUT_VALUE = 1,2,3
 ## IF SAMPLE_VALUE = B; THEN OUTPUT_VALUE = 2,4,6
 
-
-
 # SAMPLE # 
 # Create an array
 #import array as arr
 #b1= "stuff"
 #Possible_Value = arr.array('i', [1,2,3,4,5,6,7,8,9,0])
-#Sample_Value = ("v1","v2","v3","v4","v5")
-#Association = arr.array( "a" ,["v1","v2","v3"])
-
+#Sample_Value = ("1","2","3","4","5")
+#Association = arr.array( "a" ,["1","2","3"])
 #print(Possible_Value[4:8])
+
+
+
+
+
 
 
 # Create a template for each label
