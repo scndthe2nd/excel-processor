@@ -4,6 +4,8 @@
 ## Get correct cell collumn x
 
 import openpyxl
+
+# Pull information from Demo Resource Sheet
 workbook = openpyxl.load_workbook(r'Demo/Demo Sheet.xlsx', data_only=True, read_only=True)
 #print(workbook.sheetnames)
 sheet = workbook['MASTER WORKSHEET']
@@ -16,35 +18,28 @@ for i, column in enumerate(sheet):
 print (devices)
 
 
+# Pull information from Config Workbook, this has the device types and device tests
 config_book = openpyxl.load_workbook(r'Config/Config.xlsx', data_only=True, read_only=True)
 #print(config_book.sheetnames)
 device_sheet = config_book['Device Types']
-device_types = [] # Create list "devices"
+device_types = [] 
 for i, column in enumerate(device_sheet):
-        if i <= 0: # Skip number of rows
+        if i <= 0: 
                 continue
-        device_type = column[1].value # get value from column number, starting at 0
-        device_types.append(device_type) # add to list "devices"
+        device_type = column[1].value 
+        device_types.append(device_type) 
 print (device_types)
 
 test_sheet = config_book['Test Types']
-test_types = [] # Create list "devices"
+test_types = [] 
 for i, column in enumerate(test_sheet):
-        if i <= 0: # Skip number of rows
+        if i <= 0:
                 continue
-        test_type = column[0].value # get value from column number, starting at 0
-        test_types.append(test_type) # add to list "devices"
+        test_type = column[0].value 
+        test_types.append(test_type) 
 print (test_types)
 
 
-#Sample_Value_1 = sheet['B3:B11']
-#Sample_Value_2 = sheet['B4'].value
-#Sample_Value_3 = sheet['C3'].value
-#Sample_Value_4 = sheet['B5'].value
-#print(Sample_Value_1)
-#print(Sample_Value_2)
-#print(Sample_Value_3)
-#print(Sample_Value_4)
 
 # Label information by filter
 ## Create a list of POSSIBLE_VALUES that SAMPLE_VALUE can have
@@ -55,14 +50,6 @@ print (test_types)
 ## IF SAMPLE_VALUE = A; THEN OUTPUT_VALUE = 1,2,3
 ## IF SAMPLE_VALUE = B; THEN OUTPUT_VALUE = 2,4,6
 
-# SAMPLE # 
-# Create an array
-#import array as arr
-#b1= "stuff"
-#Possible_Value = arr.array('i', [1,2,3,4,5,6,7,8,9,0])
-#Sample_Value = ("1","2","3","4","5")
-#Association = arr.array( "a" ,["1","2","3"])
-#print(Possible_Value[4:8])
 
 # Create a template for each label
 ## Define template
