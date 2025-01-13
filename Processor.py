@@ -13,7 +13,6 @@
 #Sample_Value_4 = sheet['B5'].value
 #print(Sample_Value_1,Sample_Value_2,Sample_Value_3,Sample_Value_4)
 
-
 # Label information by filter
 ## Create a list of POSSIBLE_VALUES that SAMPLE_VALUE can have
 ## Create a list of OUTPUT_VALUES
@@ -31,12 +30,6 @@
 #Sample_Value = ("1","2","3","4","5")
 #Association = arr.array( "a" ,["1","2","3"])
 #print(Possible_Value[4:8])
-
-
-
-
-
-
 
 # Create a template for each label
 ## Define template
