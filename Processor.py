@@ -9,7 +9,7 @@ print_preview = 'view.html'
 
 import openpyxl
 
-# Pull information from Demo Resource Sheet
+# Pull information from Demo Resource Sheet, This has the device names
 workbook = openpyxl.load_workbook(test_workbook, data_only=True, read_only=True)
 #print(workbook.sheetnames)
 sheet = workbook['MASTER WORKSHEET']
@@ -67,19 +67,20 @@ print (test_types)
 ## Add associated listed items into print preview
 
 ### Test Template Parts
+### This is all HTML garbage that will eventually go into the format of the target page.
 
 Device_Header = '<h3>DEVICE HEADER</h3>'
-Test_Header = '<table style="width:80%"; ><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>'
-Test_Line = '<td></td><td><input type="checkbox"></td> <td><input type="checkbox"></td> <td><input type="checkbox"></td> <td style="border-bottom: 1px solid black";></td></tr>'
-Test_Close = '</table>'
+Test_Header = '<center><table><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>'
+Test_Line = '<td>Test Name Variable Goes Here</td><td><center><input type="checkbox"></center></td> <td><center><input type="checkbox"></center></td>  <td><center><input type="checkbox"></center></td> <td style="border-bottom: 1px solid black";></td></tr>'
+Test_Close = '</table></center>'
 
 
-html_open = '<html><body>'
-header_block = '<h1>Header</h1><br> <h2> Name:_________ Location: _________ Authorization ________<br> </h2>'
+html_open = '<html><head><link rel="stylesheet" href="style.css"></head><body>'
+header_block = '<h1>Header</h1><br><left><table><tr><td><h2>Name:</h2><h2>Location:</h2></td><td></td><td><h2>Authorization:</h2></td><td></td></table><br>'
 html_close = '</body></html>'
 
-signature_block = '<table><tr><td><h2>Approver</h2></td><td style="border-bottom: 1px solid black";></td></tr><tr><td><h2>Signature</h2></td><td style="border-bottom: 1px solid black";></td></tr></table>'
-comment_block = '<table></table>'
+signature_block = '<center><table><tr><td><h2>Approver</h2></td><td style="border-bottom: 1px solid black; width:80%";></td></tr><tr><td><h2>Signature</h2></td><td style="border-bottom: 1px solid black "border-bottom: 1px solid black; width:80%";></td></tr></table></center>'
+comment_block = '<br><br> Comments: <center><table><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td>  </td></tr></table></center>'
 
 # Define Print Preview File and Clear Print Preview
 
@@ -89,9 +90,15 @@ file.close()
 # Open Print Preview to be appended
 file = open(print_preview, 'a')
 file.write(html_open)
+
+### Top of page junk
 file.write(header_block)
 
 
+### Associate the variables from the demo data with the tests from the config
+
+
+### Dummy output for a device
 file.write(Device_Header)
 file.write(Test_Header)
 file.write(Test_Line)

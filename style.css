@@ -1,0 +1,15 @@
+h1 {
+  font-family: verdana;
+  font-size: 120%;
+  margin-bottom: 10;
+}
+h2 {
+  font-family: courier;
+  font-size: 110%;
+}
+table {
+    width: 95%;
+}
+td {
+    height: 15px;
+}
