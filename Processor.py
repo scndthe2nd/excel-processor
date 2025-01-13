@@ -66,19 +66,20 @@ print (test_types)
 ## these are items that create the print preview
 ## Add associated listed items into print preview
 
-Test_Header = "<table><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>"
-Test_Line = '<td></td><td><input type="checkbox"></td> <td><input type="checkbox"></td> <td><input type="checkbox"></td> <td>_______________________________________________</td></tr>'
-Test_Close = "</table>"
+### Test Template Parts
+
+Device_Header = '<h3>DEVICE HEADER</h3>'
+Test_Header = '<table style="width:80%"; ><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>'
+Test_Line = '<td></td><td><input type="checkbox"></td> <td><input type="checkbox"></td> <td><input type="checkbox"></td> <td style="border-bottom: 1px solid black";></td></tr>'
+Test_Close = '</table>'
 
 
+html_open = '<html><body>'
+header_block = '<h1>Header</h1><br> <h2> Name:_________ Location: _________ Authorization ________<br> </h2>'
+html_close = '</body></html>'
 
-
-
-
-
-html_open = "<html><body>"
-header_block = "<h1>Header</h1><br>"
-html_close = "</body></html>"
+signature_block = '<table><tr><td><h2>Approver</h2></td><td style="border-bottom: 1px solid black";></td></tr><tr><td><h2>Signature</h2></td><td style="border-bottom: 1px solid black";></td></tr></table>'
+comment_block = '<table></table>'
 
 # Define Print Preview File and Clear Print Preview
 
@@ -89,6 +90,9 @@ file.close()
 file = open(print_preview, 'a')
 file.write(html_open)
 file.write(header_block)
+
+
+file.write(Device_Header)
 file.write(Test_Header)
 file.write(Test_Line)
 file.write(Test_Line)
@@ -101,9 +105,8 @@ file.write(Test_Close)
 #    echo TEMPLATE_ITEM >> view.html
 
 
-
-
-
+file.write(comment_block)
+file.write(signature_block)
 file.write(html_close)
 file.close()
 
