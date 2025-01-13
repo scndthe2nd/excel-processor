@@ -33,11 +33,26 @@
 
 # Create a template for each label
 ## Define template
+html_open = "<html><body>"
+header_block = "<h1>Header</h1>"
+html_close = "</body></html>"
+
+
 # Add templates to a pdf queue
 ## Create a pdf queue
 ## add items in to pdf queue 
 # Create a pdf from that information
 ## send to pdf printer
+
+QUEUE = ""
+file = open('view.html', 'a')
+file.write(html_open)
+file.write(header_block)
+#for each TEMPLATE_ITEM in QUEUE
+#    echo TEMPLATE_ITEM >> view.html
+file.write(html_close)
+file.close()
+
 
 #### Interface ####
 # Create user interface
