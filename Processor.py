@@ -3,10 +3,14 @@
 # Pull information from an excel sheet
 ## Get correct cell collumn x
 
+test_workbook = 'Demo/Demo Sheet.xlsx'
+config_workbook = 'Config/Config.xlsx'
+print_preview = 'view.html'
+
 import openpyxl
 
 # Pull information from Demo Resource Sheet
-workbook = openpyxl.load_workbook(r'Demo/Demo Sheet.xlsx', data_only=True, read_only=True)
+workbook = openpyxl.load_workbook(test_workbook, data_only=True, read_only=True)
 #print(workbook.sheetnames)
 sheet = workbook['MASTER WORKSHEET']
 devices = [] # Create list "devices"
@@ -19,7 +23,7 @@ print (devices)
 
 
 # Pull information from Config Workbook, this has the device types and device tests
-config_book = openpyxl.load_workbook(r'Config/Config.xlsx', data_only=True, read_only=True)
+config_book = openpyxl.load_workbook(config_workbook, data_only=True, read_only=True)
 #print(config_book.sheetnames)
 device_sheet = config_book['Device Types']
 device_types = [] 
@@ -68,8 +72,13 @@ html_open = "<html><body>"
 header_block = "<h1>Header</h1><br>"
 html_close = "</body></html>"
 
-QUEUE = ""
-file = open('view.html', 'a')
+# Define Print Preview File and Clear Print Preview
+
+file = open(print_preview, 'w')
+file.write("")
+file.close()
+# Open Print Preview to be appended
+file = open(print_preview, 'a')
 file.write(html_open)
 file.write(header_block)
 #for each TEMPLATE_ITEM in QUEUE
