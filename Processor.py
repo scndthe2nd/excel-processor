@@ -63,11 +63,19 @@ print (test_types)
 
 
 # Set up HTML page for print
-## these are items that create the PDF Queue
-## Add associated listed items into 
+## these are items that create the print preview
+## Add associated listed items into print preview
+
+Test_Header = "<table><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>"
+Test_Line = '<td></td><td><input type="checkbox"></td> <td><input type="checkbox"></td> <td><input type="checkbox"></td> <td>_______________________________________________</td></tr>'
+Test_Close = "</table>"
 
 
-# Sample #
+
+
+
+
+
 html_open = "<html><body>"
 header_block = "<h1>Header</h1><br>"
 html_close = "</body></html>"
@@ -81,8 +89,21 @@ file.close()
 file = open(print_preview, 'a')
 file.write(html_open)
 file.write(header_block)
+file.write(Test_Header)
+file.write(Test_Line)
+file.write(Test_Line)
+file.write(Test_Line)
+file.write(Test_Line)
+file.write(Test_Line)
+file.write(Test_Close)
+
 #for each TEMPLATE_ITEM in QUEUE
 #    echo TEMPLATE_ITEM >> view.html
+
+
+
+
+
 file.write(html_close)
 file.close()
 
