@@ -69,7 +69,12 @@ header_block = "<h1>Header</h1><br>"
 html_close = "</body></html>"
 
 QUEUE = ""
-file = open('view.html', 'a')
+print_preview = 'view.html'
+file = open(print_preview, 'w')
+file.write()
+file.close()
+
+file = open(print_preview, 'a')
 file.write(html_open)
 file.write(header_block)
 #for each TEMPLATE_ITEM in QUEUE
