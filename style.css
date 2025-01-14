@@ -13,3 +13,11 @@ table {
 td {
     height: 15px;
 }
+td#fillableCell {
+  border-bottom: 1px solid black;
+  width: 60%
+}
+td#testCommentCell {
+  border-bottom: 1px solid black;
+  width: 60%
+}

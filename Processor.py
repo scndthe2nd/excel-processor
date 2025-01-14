@@ -70,16 +70,16 @@ print (test_types)
 
 Device_Header = '<h3>DEVICE HEADER</h3>'
 Test_Header = '<center><table><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>'
-Test_Line = '<td>Test Name Variable Goes Here</td><td><center><input type="checkbox"></center></td> <td><center><input type="checkbox"></center></td>  <td><center><input type="checkbox"></center></td> <td style="border-bottom: 1px solid black";></td></tr>'
+Test_Line = '<td>Test Name Variable Goes Here</td><td><center><input type="checkbox"></center></td> <td><center><input type="checkbox"></center></td> <td><center><input type="checkbox"></center></td> <td id=testCommentCell></td></tr>'
 Test_Close = '</table></center>'
 
 
-html_open = '<html><head><link rel="stylesheet" href="style.css"></head><body>'
-header_block = '<h1>Header</h1><br><left><table><tr><td><h2>Name:</h2><h2>Location:</h2></td><td></td><td><h2>Authorization:</h2></td><td></td></table><br>'
+html_open = '<!DOCTYPE html><html><head><link rel="stylesheet" href="style.css"></head><body>'
+header_block = '<head><title>Page Title</title></head><h1>Header</h1><br><left><table><tr><td><h2>Name:</h2><h2>Location:</h2></td><td></td><td><h2>Authorization:</h2></td><td></td></table><br>'
 html_close = '</body></html>'
 
-signature_block = '<center><table><tr><td><h2>Approver</h2></td><td style="border-bottom: 1px solid black; width:80%";></td></tr><tr><td><h2>Signature</h2></td><td style="border-bottom: 1px solid black "border-bottom: 1px solid black; width:80%";></td></tr></table></center>'
-comment_block = '<br><br> Comments: <center><table><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td style="border-bottom: 1px solid black; width:90%"></td></tr><tr><td>  </td></tr></table></center>'
+signature_block = '<center><table><tr><td><h2>Approver</h2></td><td id=testCommentCell;></td></tr><tr><td><h2>Signature</h2></td><td id=testCommentCell;></td></tr></table></center>'
+comment_block = '<br><br> Comments: <center><table><tr><td id=testCommentCell></td></tr><tr><td id=testCommentCell></td></tr><tr><td id=testCommentCell></td></tr><tr><td id=testCommentCell></td></tr><tr><td>  </td></tr></table></center>'
 
 # Define Print Preview File and Clear Print Preview
 
