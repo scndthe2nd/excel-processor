@@ -10,14 +10,14 @@ print_preview = 'view.html'
 import openpyxl
 
 # Pull information from Demo Resource Sheet, This has the device names
-workbook = openpyxl.load_workbook(test_workbook, data_only=True, read_only=True)
+source_book = openpyxl.load_workbook(test_workbook, data_only=True, read_only=True)
 #print(workbook.sheetnames)
-sheet = workbook['MASTER WORKSHEET']
+sheet = source_book['MASTER WORKSHEET']
 devices = [] # Create list "devices"
 for i, column in enumerate(sheet):
         if i <= 1: # Skip number of rows
                 continue
-        device = column[1].value # get value from column number, starting at 0
+        device = column[0].value # get value from column number, starting at 0
         devices.append(device) # add to list "devices"
 print (devices)
 
@@ -29,7 +29,7 @@ device_types = []
 for i, column in enumerate(device_sheet):
         if i <= 0: 
                 continue
-        device_type = column[1].value 
+        device_type = column[0].value 
         device_types.append(device_type) 
 print (device_types)
 
@@ -43,6 +43,43 @@ for i, column in enumerate(test_sheet):
 print (test_types)
 
 
+# SAMPLE #
+# Define the list of tests with alt text
+tests_with_alt_text = {
+    "test1": "on/off",
+    "test2": "short",
+    "test3": "open",
+    "test4": "close"
+}
+
+# Define the table of device types and their corresponding tests
+device_tests = {
+    "cam": ["test1", "test2"],
+    "kpd": ["test1", "test2", "test3", "test4"]
+}
+
+# Function to get the tests for each device with alt text
+def get_device_tests_with_alt_text(device_names):
+    result = {}
+    for device in device_names:
+        # Extract the device type (e.g., 'cam' from 'cam1')
+        device_type = ''.join([i for i in device if not i.isdigit()])
+        # Get the corresponding tests for the device type
+        tests = device_tests.get(device_type, [])
+        # Add alt text to each test
+        result[device] = [(test, tests_with_alt_text[test]) for test in tests]
+    return result
+
+# List of device names
+device_names = ["cam1", "kpd2", "kpd5", "cam4"]
+
+# Get the tests for each device with alt text and print the results
+device_tests_result = get_device_tests_with_alt_text(device_names)
+print(device_tests_result)
+
+
+
+####
 
 # Label information by filter
 ## Create a list of POSSIBLE_VALUES that SAMPLE_VALUE can have
@@ -67,7 +104,7 @@ print (test_types)
 
 ### Test Template Parts
 ### This is all HTML garbage that will eventually go into the format of the target page.
-
+### This really should have been done in JQuery, but that would require pulling an external library
 Device_Header = '<h3>DEVICE HEADER</h3>'
 Test_Header = '<center><table><tr><th>TESTNAME</th> <th>Yes</th> <th>No</th> <th>N/A</th> <th>Comment</th></tr>'
 Test_Line = '<td>Test Name Variable Goes Here</td><td><center><input type="checkbox"></center></td> <td><center><input type="checkbox"></center></td> <td><center><input type="checkbox"></center></td> <td id=testCommentCell></td></tr>'
