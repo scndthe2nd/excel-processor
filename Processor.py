@@ -21,7 +21,6 @@ for i, column in enumerate(sheet):
         devices.append(device) # add to list "devices"
 print (devices)
 
-
 # Pull information from Config Workbook, this has the device types and device tests
 config_book = openpyxl.load_workbook(config_workbook, data_only=True, read_only=True)
 #print(config_book.sheetnames)
